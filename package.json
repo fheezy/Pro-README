@@ -1,0 +1,20 @@
+{
+  "name": "pro-readme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fheezy/Pro-README.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fheezy/Pro-README/issues"
+  },
+  "homepage": "https://github.com/fheezy/Pro-README#readme"
+}
