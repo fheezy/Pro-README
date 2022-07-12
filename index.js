@@ -1,4 +1,4 @@
-var fileGenerator = require("./fileGenerator");
+var generateMarkdown = require("./genrateMarkdown");
 var fs = require("fs");
 var inquirer = require('inquirer');
 
@@ -92,7 +92,7 @@ let questions = [
 inquirer.prompt(questions).then(function(response) {
    console.log(response);
    
-    var content = fileGenerator(response);
+    var content = generateMarkdown(response);
     console.log(content);
      fs.writeFile("./ReadMe.md", content, function(err){
          if (err) throw err
