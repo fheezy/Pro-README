@@ -1,101 +1,87 @@
-var generateMarkdown = require("./genrateMarkdown");
-var fs = require("fs");
-var inquirer = require('inquirer');
+// Declaring the dependencies and variables
+const fs = require("fs");
+const util = require("util");
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateReadme")
+const writeFileAsync = util.promisify(fs.writeFile);
 
-// questions to ask the user //
-let questions = [
-    {
-        type: "input",
-        message: "What is the title of your repository?",
-        name: "title"
-    },{
-        type: "input",
-        message: "Please give your logo information.",
-        name: "logo"
-    },{
-        type: "input",
-        message: "What is your GitHub user name?",
-        name: "userName"
-    },{
-        type: "input",
-        message: "Please give your GitHub profile link.",
-        name: "GitHub"
-    },{
-        type: "input",
-        message: "What is your email?",
-        name: "email"
-    },{
-        type: "list",
-        name: "license",
-        message: "Please select which license you would like to use.",
-        choices : [
-            "APACHE 2.O",
-            "BSD 3",
-            "GVL-GPL 3.0",
-            "MIT",
-            "None"
-        ],
-    },{
-        type: "input",
-        message: "Please describe the repository.",
-        name: "description"
+//Prompt the user questions to populate the README.md
+function promptUser(){
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "projectTitle",
+            message: "What is the project title?",
+        },
+        {
+            type: "input",
+            name: "description",
+            message: "Write a brief description of your project: "
+        },
+        {
+            type: "input",
+            name: "installation",
+            message: "Describe the installation process if any: ",
+        },
+        {
+            type: "input",
+            name: "usage",
+            message: "What is this project usage for?"
+        },
+        {
+            type: "list",
+            name: "license",
+            message: "Chose the appropriate license for this project: ",
+            choices: [
+                "Apache",
+                "Academic",
+                "GNU",
+                "ISC",
+                "MIT",
+                "Mozilla",
+                "Open"
+            ]
+        },
+        {
+            type: "input",
+            name: "contributing",
+            message: "Who are the contributors of this projects?"
+        },
+        {
+            type: "input",
+            name: "tests",
+            message: "Is there a test included?"
+        },
+        {
+            type: "input",
+            name: "questions",
+            message: "What do I do if I have an issue? "
+        },
+        {
+            type: "input",
+            name: "username",
+            message: "Please enter your GitHub username: "
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "Please enter your email: "
+        }
+    ]);
+} 
 
-    },{
-        type: "input",
-        message: "Please state if others can contribute.",
-        name: "contribute"
-    },{
-        type: "input",
-        message: "Please state any test(s) require (1/3).",
-        name: "test"
-    },{
-        type: "input",
-        message: "Please state any test(s) require(2/3).",
-        name: "test2"
-    },{
-        type: "input",
-        message: "Please state any test(s) require (3/3).",
-        name: "test3",
-    },{
-        type: "input",
-        message: "State your accomplishments.",
-        name: "accomplish"
-    },{
-        type: "input",
-        message: "Please state provide a screenshot (1 of 3).",
-        name: "scriptjs"
-    },{
-        type: "input",
-        message: "Please state provide a screenshot (2 of 3).",
-        name: "fileGnerator"
-    },{
-        type: "input",
-        message: "Please state provide a screenshot (3 of 3).",
-        name: "ReadMe"
-    },{
-        type: "input",
-        message: "Please supply two references (1/2).",
-        name: "ref1"
-    },{
-        type: "input",
-        message: "Please supply two references (2/2).",
-        name: "ref2"
-    },{
-        type: "input",
-        message: "Please state your end-goal.",
-        name: "endgoal"
+// Async function using util.promisify 
+  async function init() {
+    try {
+        // Ask user questions and generate responses
+        const answers = await promptUser();
+        const generateContent = generateMarkdown(answers);
+        // Write new README.md to dist directory
+        await writeFileAsync('./dist/README.md', generateContent);
+        console.log('✔️  Successfully wrote to README.md');
+    }   catch(err) {
+        console.log(err);
     }
-];
-
-
-// Function to write to my ReadMe.md file. //
-inquirer.prompt(questions).then(function(response) {
-   console.log(response);
-   
-    var content = generateMarkdown(response);
-    console.log(content);
-     fs.writeFile("./ReadMe.md", content, function(err){
-         if (err) throw err
-         console.log("success");
-     });
-} ); 
+  }
+  
+  init();  
