@@ -1,48 +1,32 @@
-// generateReadme function populating the README.md
-function generateMarkdown(answers) {
+// function to generate markdown for README
+
+function generateMarkdown(data) {
     return `
-<h1 align="center">${answers.projectTitle} 👋</h1>
-  
-![badge](https://img.shields.io/badge/license-${answers.license}-brightgreen)<br />
+# ${data.Title}
+https://github.com/${data.Username}/${data.Title}
+# Description
+${data.Description}
+# Table of Contents 
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+# Installation
+The following necessary dependencies must be installed to run the application properly: ${data.Installation}
+# Usage
+In order to use this app, ${data.Usage}
+# License
+This project is licensed under the ${data.License} license. 
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+# Contributing
+​Contributors: ${data.Contributing}
+# Tests
+The following is needed to run the test: ${data.Tests}
+# Questions
+If you have any questions about the repo, open an issue or contact ${data.Username} directly at : ${data.Email}.
+`
+}
 
-## Description
-🔍 ${answers.description}
-
-## Table of Contents
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-
-## Installation
-💾 ${answers.installation}
-
-## Usage
-💻 ${answers.usage}
-
-## License
-![badge](https://img.shields.io/badge/license-${answers.license}-brightgreen)
-<br />
-This application is covered by the ${answers.license} license. 
-
-## Contributing
-👪 ${answers.contributing}
-
-## Tests
-✏️ ${answers.tests}
-
-## Questions
-✋ ${answers.questions}<br />
-<br />
-:octocat: Find me on GitHub: [${answers.username}](https://github.com/${answers.username})<br />
-<br />
-✉️ Email me with any questions: ${answers.email}<br /><br />
-
-_This README was generated with ❤️ by [README-generator](https://github.com/jpd61/README-generator) 🔥🔥🔥_
-    `;
-  }
-  
-  module.exports = generateMarkdown;
+module.exports = generateMarkdown;

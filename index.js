@@ -1,37 +1,46 @@
-// Declaring the dependencies and variables
-const fs = require("fs");
-const util = require("util");
-const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateReadme")
-const writeFileAsync = util.promisify(fs.writeFile);
+//required modules/packages 
+const inquirer = require('inquirer');
+const fs = require('fs');
+const util = required('util');
 
-//Prompt the user questions to populate the README.md
-function promptUser(){
-    return inquirer.prompt([
+const generateMarkdown = require('./util/generateMarkdown');
+
+//inquirer to generate questions 
+// inquirer.prompt(
+    const questions =
+    [
         {
-            type: "input",
-            name: "projectTitle",
-            message: "What is the project title?",
+            type:'input',
+            message:'What is the name of the project?',
+            name:'title',
+            //validate property to checl that the user provided a value
+            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
         },
         {
-            type: "input",
-            name: "description",
-            message: "Write a brief description of your project: "
+            type:'input',
+            message:'Type a brief description of your project: ',
+            name:'description',
+            //validate property to checl that the user provided a value
+            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
         },
         {
-            type: "input",
-            name: "installation",
-            message: "Describe the installation process if any: ",
+            type:'input',
+            message:'Describe the installation process if any: ',
+            name:'installation',
+            //validate property to checl that the user provided a value
+            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
         },
         {
-            type: "input",
-            name: "usage",
-            message: "What is this project usage for?"
+            type:'input',
+            message:'What is this project usage for: ',
+            name:'usage',
+            //validate property to checl that the user provided a value
+            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
         },
         {
-            type: "list",
-            name: "license",
-            message: "Chose the appropriate license for this project: ",
+            type:'list',
+            message:'Chose the appropriate license for this project: ',
+            name:'license',
             choices: [
                 "Apache",
                 "Academic",
@@ -41,47 +50,61 @@ function promptUser(){
                 "Mozilla",
                 "Open"
             ]
+            //validate property to checl that the user provided a value
+            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
         },
         {
-            type: "input",
-            name: "contributing",
-            message: "Who are the contributors of this projects?"
+            type:'input',
+            message:'Who are the contributors of this projects?',
+            name:'contributing',
+            //validate property to checl that the user provided a value
+            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
         },
         {
-            type: "input",
-            name: "tests",
-            message: "Is there a test included?"
+            type:'input',
+            message:'Is there a test included?',
+            name:'test',
+            //validate property to checl that the user provided a value
+            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
         },
         {
-            type: "input",
-            name: "questions",
-            message: "What do I do if I have an issue? "
+            type:'input',
+            message:'What is your github username?',
+            name:'username',
+            //validate property to checl that the user provided a value
+            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
         },
         {
-            type: "input",
-            name: "username",
-            message: "Please enter your GitHub username: "
+            type:'input',
+            message:'Please input your email: ',
+            name:'email',
+            //validate property to checl that the user provided a value
+            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
         },
-        {
-            type: "input",
-            name: "email",
-            message: "Please enter your email: "
-        }
-    ]);
-} 
+    ]
 
-// Async function using util.promisify 
-  async function init() {
-    try {
-        // Ask user questions and generate responses
-        const answers = await promptUser();
-        const generateContent = generateMarkdown(answers);
-        // Write new README.md to dist directory
-        await writeFileAsync('./dist/README.md', generateContent);
-        console.log('✔️  Successfully wrote to README.md');
-    }   catch(err) {
-        console.log(err);
+    //function to write README file 
+    function writeToFile(fileName, data) {
+        fs.writeFile(fileName, data, function(err) {
+          console.log(fileName)
+          console.log(data)
+          if(err) {
+            return console.log(err)
+          } else {
+            console.log("success")
+          }
+        })
     }
-  }
-  
-  init();  
+
+    //function to initialize program
+    function init() {
+        inquirer.prompt(questions)
+        .then(function(data) {
+            writeToFile("README.md", generateMarkdown(data));
+            console.log(data)
+        })
+    }
+
+    //function call to initialize the program
+    init();
+
