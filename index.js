@@ -6,8 +6,7 @@ const util = required('util');
 const generateMarkdown = require('./generateMarkdown');
 
 //inquirer to generate questions 
-// inquirer.prompt(
-    const questions =
+inquirer.prompt(
     [
         {
             type:'input',
@@ -81,7 +80,7 @@ const generateMarkdown = require('./generateMarkdown');
             //validate property to checl that the user provided a value
             // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
         },
-    ]
+    ] )
 
     //function to write README file 
     function writeToFile(fileName, data) {
@@ -98,7 +97,7 @@ const generateMarkdown = require('./generateMarkdown');
 
     //function to initialize program
     function init() {
-        inquirer.prompt(questions)
+        inquirer.prompt(questions) // return function
         .then(function(data) {
             writeToFile("README.md", generateMarkdown(data));
             console.log(data)
