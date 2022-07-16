@@ -1,109 +1,139 @@
-//required modules/packages 
-const inquirer = require('inquirer');
-const fs = require('fs');
-const util = required('util');
+// TODO: Include packages needed for this application
+// TODO: Create an array of questions for user input
+const inquirer = require('inquirer')
+const fs = require('fs')
+const util = require('util')
+const { type } = require('os')
+const generateMarkdown = require('./generateMarkdown.js');
 
-const generateMarkdown = require('./generateMarkdown');
 
-//inquirer to generate questions 
-inquirer.prompt(
-    [
+const { title } = require('process');
+inquirer
+    .prompt([
+        /* Questions are in here */
         {
-            type:'input',
-            message:'What is the name of the project?',
-            name:'title',
-            //validate property to checl that the user provided a value
-            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
-        },
-        {
-            type:'input',
-            message:'Type a brief description of your project: ',
-            name:'description',
-            //validate property to checl that the user provided a value
-            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
-        },
-        {
-            type:'input',
-            message:'Describe the installation process if any: ',
-            name:'installation',
-            //validate property to checl that the user provided a value
-            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
-        },
-        {
-            type:'input',
-            message:'What is this project usage for: ',
-            name:'usage',
-            //validate property to checl that the user provided a value
-            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
-        },
-        {
-            type:'list',
-            message:'Chose the appropriate license for this project: ',
-            name:'license',
-            choices: [
-                "Apache",
-                "Academic",
-                "GNU",
-                "ISC",
-                "MIT",
-                "Mozilla",
-                "Open"
-            ]
-            //validate property to checl that the user provided a value
-            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
-        },
-        {
-            type:'input',
-            message:'Who are the contributors of this projects?',
-            name:'contributing',
-            //validate property to checl that the user provided a value
-            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
-        },
-        {
-            type:'input',
-            message:'Is there a test included?',
-            name:'test',
-            //validate property to checl that the user provided a value
-            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
-        },
-        {
-            type:'input',
-            message:'What is your github username?',
-            name:'username',
-            //validate property to checl that the user provided a value
-            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
-        },
-        {
-            type:'input',
-            message:'Please input your email: ',
-            name:'email',
-            //validate property to checl that the user provided a value
-            // validate: (value)=>{ if(value){return true} else {return 'i need a value to continue'}},
-        },
-    ] )
+            name: "email",
+            message: "What is your e-mail address?",
+            type: "input",
 
-    //function to write README file 
-    function writeToFile(fileName, data) {
-        fs.writeFile(fileName, data, function(err) {
-          console.log(fileName)
-          console.log(data)
-          if(err) {
-            return console.log(err)
-          } else {
-            console.log("success")
-          }
+        },
+        {
+            name: "github",
+            message: "What is your Github username?",
+            type: "input",
+
+        },
+
+        {
+            name: "Title",
+            message: "What is the title of your project",
+            type: "input",
+            validate: titleInput => {
+                if (titleInput) {
+                    return true;
+                }
+                else {
+                    console.log('Please include a title');
+                    return false;
+                }
+            }
+
+        }, {
+
+            name: "Description",
+            message: "Include brief description of your project",
+            type: "input",
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    return true;
+                }
+                else {
+                    console.log('Include Description');
+                    return false;
+
+                }
+            }
+
+
+        }, {
+
+            name: "Installation",
+            message: "What do I need to install the application?",
+            type: "input",
+            validate: installationInput => {
+                if (installationInput) {
+                    return true
+
+                }
+                else {
+                    console.log('Please')
+
+                }
+
+            }
+
+        }, {
+            name: "Usage",
+            message: "How do you use this application?",
+            type: "input",
+            validate: usageInput => {
+                if (usageInput) {
+                    return true
+                }
+                else {
+                    console.log('Please include sample of code');
+                }
+            }
+        }, {
+
+
+            name: "License",
+            message: "Which of the follwoing license did you use for this project?",
+            type: "list",
+            choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD']
+
+        }, {
+
+            name: "Contributing",
+            message: "How can someone contribute in this project?",
+            type: "input",
+
+            validate: contributingInput => {
+                if (contributingInput) {
+                    return true;
+                }
+
+                else {
+                    console.log('Please include how they would contribute')
+                    return false;
+                }
+            }
+
+
+
+        },
+        {
+
+            name: "Name",
+            message: "What is your name",
+            type: "input",
+            validate: NameInput => {
+                if (NameInput) {
+                    return true
+
+                }
+                else {
+                    console.log('Please Enter your Name')
+
+                }
+
+            }
+
+        }
+
+
+    ]) .then(userData => {
+        fs.writeFile('./README.md', generateMarkdown(userData), function(err) {
+            if (err) console.log(err);
         })
-    }
-
-    //function to initialize program
-    function init() {
-        inquirer.prompt(questions) // return function
-        .then(function(data) {
-            writeToFile("README.md", generateMarkdown(data));
-            console.log(data)
-        })
-    }
-
-    //function call to initialize the program
-    init();
-
+    })
