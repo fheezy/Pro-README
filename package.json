@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "got": "^11.8.3",
     "inquirer": "^9.0.0",
     "node-fetch": "^2.6.6"
   }
