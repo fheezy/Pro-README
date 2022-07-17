@@ -1,7 +1,7 @@
 
-  # sajfnd  (![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  # readme pro  (![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Description
-  asfnafl
+  application generates README
   ## Table of Contents (Optional)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -10,13 +10,13 @@
   - [Tests](#tests)
   - [Questions](#questions)
   ## Installation
-  asfjfa
+  clone the code   and clone it into a code editior, answer the following promt questions and it will give   you a README.
   ## Usage
-  fadsf
+  answer  the questions and a README generates
   ## License
   
     MIT License
-Copyright (c) 2022 af
+Copyright (c) 2022 farhan
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -34,12 +34,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
     
   ## Contributing
-  af
+  ediditng it to make it better at convience 
   ## Tests
   
   ## Questions
   | My Contact Info|
   |----------|
-  |Name:af
-  |GitHub: clear|
-  |My Email: cleaar|
+  |Name:farhan  
+  |My Email: farhan@gmail|
+  |GitHub: fheezy|  
