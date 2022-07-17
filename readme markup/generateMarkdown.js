@@ -842,9 +842,9 @@ function generateMarkdown(userData) {
   ## Questions
   | My Contact Info|
   |----------|
-  |Name:${userData.Name}
-  |GitHub: ${userData.github}|
+  |Name:${userData.Name}  
   |My Email: ${userData.email}|
+  |GitHub: ${userData.github}|  
 `;
 }
 

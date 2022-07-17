@@ -22,15 +22,6 @@ inquirer
             name: "github",
             message: "What is your Github username?",
             type: "input",
-            // validate: githubInput => {
-            //     if (githubInput) {
-            //         return true;
-            //     }
-            //     else {
-            //         console.log('Please include your username');
-            //         return false;
-            //     }
-            // }
 
         },
 
