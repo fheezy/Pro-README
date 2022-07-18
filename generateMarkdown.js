@@ -819,7 +819,8 @@ function generateMarkdown(userData) {
   // const {projectName, projectDescription, Installation, usage, license, contributing, tests, name, githubUserName, email} = userData;
   console.log(userData.Title)
   return `
-  # ${userData.Title}  ${renderLicenseBadge(userData)}
+  # ${renderLicenseBadge(userData)}
+  # ${userData.Title} 
   ## Description
   ${userData.Description}
   ## Table of Contents (Optional)
