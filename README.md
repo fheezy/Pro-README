@@ -1,10 +1,10 @@
 
   # (![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-  # readme 
+  # affas 
 
   ## Description
-  generate readme
+  asfafa
   ## Table of Contents (Optional)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -14,15 +14,15 @@
   - [Questions](#questions)
 
   ## Installation
-  clone the repo   and pull the repo into a code editior 
+  afaffa
 
   ## Usage
-  answer the questions
+  afdaf
 
   ## License
   
     MIT License
-Copyright (c) 2022 farhan
+Copyright (c) 2022 afas
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -41,13 +41,13 @@ SOFTWARE.
     
 
   ## Contributing
-  edit the layout
+  afs
   
   ## Tests
   
   ## Questions
   | My Contact Info|
   |----------|
-  |Name:farhan  
-  |My Email: farhan66@yahoo|
-  |GitHub: fheexy|  
+  |Name:afas  
+  |My Email: safasf|
+  |GitHub: asfafs|  
