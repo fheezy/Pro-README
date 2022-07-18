@@ -1,10 +1,10 @@
 
   # (![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-  # affas 
+  # Pro-README 
 
   ## Description
-  asfafa
+  generates a readme file
   ## Table of Contents (Optional)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -14,15 +14,15 @@
   - [Questions](#questions)
 
   ## Installation
-  afaffa
+  clone the repo,pull it a code editor 
 
   ## Usage
-  afdaf
+  fill in the questions it asks for the README
 
   ## License
   
     MIT License
-Copyright (c) 2022 afas
+Copyright (c) 2022 farhan 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -41,13 +41,13 @@ SOFTWARE.
     
 
   ## Contributing
-  afs
+  template of the README
   
   ## Tests
   
   ## Questions
   | My Contact Info|
   |----------|
-  |Name:afas  
-  |My Email: safasf|
-  |GitHub: asfafs|  
+  |Name:farhan   
+  |My Email: farhanhoque764@gmail.com|
+  |GitHub: fheezy|  
