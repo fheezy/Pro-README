@@ -820,7 +820,9 @@ function generateMarkdown(userData) {
   console.log(userData.Title)
   return `
   # ${renderLicenseBadge(userData)}
+
   # ${userData.Title} 
+
   ## Description
   ${userData.Description}
   ## Table of Contents (Optional)
@@ -830,14 +832,19 @@ function generateMarkdown(userData) {
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
+
   ## Installation
   ${userData.Installation}
+
   ## Usage
   ${userData.Usage}
+
   ## License
   ${renderLicense(userData)}
+
   ## Contributing
   ${userData.Contributing}
+  
   ## Tests
   
   ## Questions
