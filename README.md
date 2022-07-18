@@ -1,7 +1,8 @@
 
-  # readme pro  (![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  # (![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  # readme 
   ## Description
-  application generates README
+  generates a readme
   ## Table of Contents (Optional)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -10,9 +11,9 @@
   - [Tests](#tests)
   - [Questions](#questions)
   ## Installation
-  clone the code   and clone it into a code editior, answer the following promt questions and it will give   you a README.
+  clone the repo 
   ## Usage
-  answer  the questions and a README generates
+  fill in the answers
   ## License
   
     MIT License
@@ -34,12 +35,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
     
   ## Contributing
-  ediditng it to make it better at convience 
+  make it layout better
   ## Tests
   
   ## Questions
   | My Contact Info|
   |----------|
   |Name:farhan  
-  |My Email: farhan@gmail|
+  |My Email: farhan77@gmail|
   |GitHub: fheezy|  
