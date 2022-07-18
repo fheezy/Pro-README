@@ -1,8 +1,10 @@
 
   # (![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
   # readme 
+
   ## Description
-  generates a readme
+  generate readme
   ## Table of Contents (Optional)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -10,10 +12,13 @@
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
+
   ## Installation
-  clone the repo 
+  clone the repo   and pull the repo into a code editior 
+
   ## Usage
-  fill in the answers
+  answer the questions
+
   ## License
   
     MIT License
@@ -34,13 +39,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
     
+
   ## Contributing
-  make it layout better
+  edit the layout
+  
   ## Tests
   
   ## Questions
   | My Contact Info|
   |----------|
   |Name:farhan  
-  |My Email: farhan77@gmail|
-  |GitHub: fheezy|  
+  |My Email: farhan66@yahoo|
+  |GitHub: fheexy|  
