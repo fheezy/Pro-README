@@ -1,6 +1,3 @@
- # Badge 
- ![MIT](https://img.shields.io/badge/License-MIT-blue)
-
  # Pro-README
 
  ## Description 
@@ -11,7 +8,7 @@ file for you through terminal/command.
 Check out my Github to see more projects i've done [Github](https://github.com/fheezy)
 
 ## Table of Contents 
-- [Badge](#badge)
+
 - [Pro-README](#pro-readme)
 - [Description](#description)
 - [TableOfContacts](#table-of-contents)
@@ -19,7 +16,10 @@ Check out my Github to see more projects i've done [Github](https://github.com/f
 - [Technologies](#technologies)
 - [Installation](#installation)
 - [Usage](#usage)
-
+- [Credits](#credits)
+- [License](#license)
+- [Badge](#badge)
+- [Test](#tests)
 
 ## User Story
 ~~~
@@ -45,9 +45,6 @@ Heres also a link of a [video](https://drive.google.com/file/d/1e32TEPCoU9yl9oLX
 
 Credits go to me, i've developed this application. Go ahead and check out my [profile](https://github.com/fheezy) !
 
-## Tests
-
-On the command line, type 'node index.js' and follow through the prompts 
 
 ## License
 
@@ -72,6 +69,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+ ## Badge 
+ ![MIT](https://img.shields.io/badge/License-MIT-blue)
+
+ ## Tests
+
+On the command line, type 'node index.js' and follow through the prompts 
 
 
 
